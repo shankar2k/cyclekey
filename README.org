@@ -80,7 +80,7 @@ This function should be called whenever ~cyclekey-languages~ or
 In this example, we assume that Cyclekey is configured as above, so that
 ~cyclekey-cycle~ is bound to ~M-o~. Suppose that the current set of Cyclekey
 languages is Spanish and German, i.e., the current value of ~cyclekey-languages~
-is ~'("Spanish" "German")~. Suppose that we wish to type the following sentence:
+is ='("Spanish" "German")=. Suppose that we wish to type the following sentence:
 
 #+begin_src 
 I went to a Mexican café in Düsseldorf and ordered jalapeño salsa.
