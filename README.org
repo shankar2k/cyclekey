@@ -102,8 +102,7 @@ We first add Slovak to Cyclekey by invoking ~M-x cyclekey-add-language[RET] Slov
 - To enter "doppelgänger", we type ~d o p p e l g a M-o M-o n g e r~
 - To enter "Čaputová", we type ~C M-o a p u t o v a M-o~
 
-Since we no longer need Slovak, we can remove it from Cyclekey by invoking ~M-x
-cyclekey-remove-language[RET] Slovak [RET]~.
+Since we no longer need Slovak, we can remove it from Cyclekey by invoking ~M-x cyclekey-remove-language[RET] Slovak [RET]~.
 
 ** Customization
 
