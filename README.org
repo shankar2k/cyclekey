@@ -97,8 +97,7 @@ Slovak characters:
 At the next table, I saw woman who was a doppelgänger for Slovak President Zuzana Čaputová.
 #+end_src
 
-We first add Slovak to Cyclekey by invoking ~M-x cyclekey-add-language[RET]
-Slovak [RET]~.
+We first add Slovak to Cyclekey by invoking ~M-x cyclekey-add-language[RET] Slovak [RET]~.
 
 - To enter "doppelgänger", we type ~d o p p e l g a M-o M-o n g e r~
 - To enter "Čaputová", we type ~C M-o a p u t o v a M-o~
