@@ -113,6 +113,12 @@ all subsequent characters are variants marked with various
 diacritics."
   :type '(alist :key-type string :value-type (repeat string)))
 
+(defcustom cyclekey-save-languages t
+  "When true, save ``cyclekey-languages'' for future sessions
+whenever it is modified by either ``cyclekey-add-language'' or
+``cyclekey-remove-language''."
+  :type 'boolean)
+
 ;;;; Constants
 
 (defconst cyclekey-empty-map
@@ -214,8 +220,9 @@ Cyclekey map."
   (interactive (list (completing-read "Language to add to Cyclekey: "
                                       cyclekey-marks-alist)))
   (unless (member lang cyclekey-languages)
-    (customize-save-variable 'cyclekey-languages
-                             (append cyclekey-languages (list lang)))
+    (setq cyclekey-languages (append cyclekey-languages (list lang)))
+    (when cyclekey-save-languages
+      (customize-save-variable 'cyclekey-languages cyclekey-languages))
     (cyclekey-init)
     (when (called-interactively-p 'any)
       (message "Marks from %s added to Cyclekey." lang))))
@@ -225,8 +232,9 @@ Cyclekey map."
   "Remove marks from LANG from the character cycles in ``cyclekey-cycle''."
   (interactive (list (completing-read "Language to remove from Cyclekey: "
                                       cyclekey-languages)))
-  (customize-save-variable 'cyclekey-languages
-                           (remove lang cyclekey-languages))
+  (setq cyclekey-languages (remove lang cyclekey-languages))
+  (when cyclekey-save-languages
+    (customize-save-variable 'cyclekey-languages cyclekey-languages))
   (cyclekey-init)
   (when (called-interactively-p 'any)
     (message "Marks from %s removed from Cyclekey." lang)))
