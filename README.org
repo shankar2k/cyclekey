@@ -1,0 +1,123 @@
+* Cyclekey
+** Summary
+
+This package provides the command ~cyclekey-cycle~ which cycles through relevant
+diacritics and accents for the character at point, without the need for
+switching input methods or navigating through the ~C-x 8~ keymap. Languages can
+be dynamically added and removed using ~cyclekey-add-language~ and
+~cyclekey-remove-language~, respectively.
+
+** Installation
+
+This package can be cloned from GitHub via the following command:
+
+#+begin_src bash
+git clone https://github.com/shankar2k/cyclekey.git
+#+end_src
+
+To start using it, place it somewhere in your Emacs load-path and add the line
+
+#+begin_src emacs-lisp
+(require 'cyclekey)
+#+end_src
+
+in your ~.emacs.d/init.el~ file. Then run ~M-x cyclekey-cycle~ to use it. To make
+the best use of Cyclekey, one should to create a global keybinding for
+~cyclekey-cycle~ function, preferably something short. For example, in my setup,
+I use ~M-o~.
+
+#+begin_src emacs-lisp
+(global-set-key (kbd "M-o") 'cyclekey-cycle)
+#+end_src
+
+If you use ~use-package~, you can configure this as follows:
+
+#+begin_src emacs-lisp
+(use-package cyclekey
+  :load-path (lambda () "<path to cyclekey dir>")
+  :ensure nil
+  :bind ("M-o" . cyclekey-cycle))
+#+end_src
+
+
+** Usage
+
+This package defines the following commands:
+
+~cyclekey-cycle~: cycle through diacritical marks and accents for the character at point.
+
+By default this commands cycles forwards through set of marks for the
+character at point. If the character at point is not present in the Cyclekey character
+cycles, this command does nothing. If the command is invoked with the optional
+prefix argument (~C-u M-x cyclekey-cycle~), then it instead cycles backwards
+through the set of relevant marks.
+
+~cyclekey-add-language~: add marks from ~LANG~ to the character cycles in ~cyclekey-cycle~.
+
+The language string ~LANG~ is added to the list of languages in
+~cyclekey-languages~. When called interactively, ~LANG~ is selected by the user
+via ~completing-read~ from one of the languages defined in ~cyclekey-marks-alist~.
+By default, this change is saved for future sessions using
+~customize-save-variable~.
+
+~cyclekey-remove-language~: remove marks from ~LANG~ from the character cycles in ~cyclekey-cycle~.
+
+The language string ~LANG~ is removed from the list of languages in
+~cyclekey-languages~. When called interactively, ~LANG~ is selected by the user
+via ~completing-read~ from one of the languages in ~cyclekey-languages~. By
+default, this change is saved for future sessions using
+~customize-save-variable~.
+
+~cyclekey-help~: Show how ~cyclekey-cycle~~ cycles through marks for various characters
+
+~cyclekey-init~: Initialize the Cyclekey maps
+
+This function should be called whenever ~cyclekey-languages~ or
+~cyclekey-marks-alist~ are modified non-interactively.
+
+** Example
+
+In this example, we assume that Cyclekey is configured as above, so that
+~cyclekey-cycle~ is bound to ~M-o~. Suppose that the current set of Cyclekey
+languages is Spanish and German, i.e., the current value of ~cyclekey-languages~
+is ~'("Spanish" "German")~. Suppose that we wish to type the following sentence:
+
+#+begin_src 
+I went to a Mexican café in Düsseldorf and ordered jalapeño salsa.
+#+end_src
+
+- To enter "café", we type ~c a f e M-o~
+- To enter "Düsseldorf", we type ~D u M-o M-o s s e l d o r f~, or alternatively ~D u C-u M-o s s e l d o r f~
+- To enter "jalapeño", we type ~j a l a p e n M-o o~
+
+After typing this sentence we realize, that the next sentence will require
+Slovak characters: 
+
+#+begin_src 
+At the next table, I saw woman who was a doppelgänger for Slovak President Zuzana Čaputová.
+#+end_src
+
+We first add Slovak to Cyclekey by invoking ~M-x cyclekey-add-language[RET]
+Slovak [RET]~.
+
+- To enter "doppelgänger", we type ~d o p p e l g a M-o M-o n g e r~
+- To enter "Čaputová", we type ~C M-o a p u t o v a M-o~
+
+Since we no longer need Slovak, we can remove it from Cyclekey by invoking ~M-x
+cyclekey-remove-language[RET] Slovak [RET]~.
+
+** Customization
+
+The behavior of Cyclekey can be modified by customizing the following variables:
+
+- cyclekey-languages :: List of languages that Cyclekey uses to generate character cycles.
+- cyclekey-marks-alist ::  Alist mapping languages to lists of character cycles.
+
+Each keys is a string corresponding to a known language that uses a latin
+alphabet. Each value is a list of character cycles, where each character cycle
+is a string with the first character an English letter and all subsequent
+characters are variants marked with various diacritics.
+
+- cyclekey-save-languages :: When true, save ~cyclekey-languages~ for future
+  sessions whenever it is modified interactively. (default *true*)
+ 
