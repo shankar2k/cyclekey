@@ -1,6 +1,6 @@
 ;;; cyclekey.el --- Quickly cycle through diacritics at point  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2022 Shankar Rao
+;; Copyright (C) 2023 Shankar Rao
 
 ;; Author: Shankar Rao <shankar.rao@gmail.com>
 ;; URL: https://github.com/shankar2k/cyclekey
@@ -34,7 +34,7 @@
 
 ;;; History:
 
-;; Version 0.1 (2023-01-02):
+;; Version 0.1 (2023-12-02):
 
 ;; - Initial version
 
