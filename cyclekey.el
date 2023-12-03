@@ -208,9 +208,12 @@ Cyclekey map."
     (princ "\n\nCyclekey cycling\n----------------\n")
     (cl-loop for ch from ?a to ?z with cycle
              when (setq cycle (gethash ch cyclekey-full-map))
-             do (princ (format "    %c --> %-19s%c --> %s\n"
-                               ch cycle (upcase ch)
-                               (gethash (upcase ch) cyclekey-full-map)))))
+             do (princ
+                 (format "    %c ---> %-19s%s\n" ch cycle
+                         (if-let* ((upch (upcase ch))
+                                   (upcyc (gethash upch cyclekey-full-map)))
+                             (format "%c --> %s" upch upcyc)
+                           "")))))
   (with-current-buffer "*Cyclekey Help*"
     (setq truncate-lines t)))
 
