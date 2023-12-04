@@ -44,7 +44,7 @@ If you use ~use-package~, you can configure this as follows:
 
 This package defines the following commands:
 
-~cyclekey-cycle~: cycle through diacritical marks and accents for the character at point.
+- cyclekey-cycle :: Cycle through diacritical marks and accents for the character at point.
 
 By default this commands cycles forwards through set of marks for the
 character at point. If the character at point is not present in the Cyclekey character
@@ -52,7 +52,7 @@ cycles, this command does nothing. If the command is invoked with the optional
 prefix argument (~C-u M-x cyclekey-cycle~), then it instead cycles backwards
 through the set of relevant marks.
 
-~cyclekey-add-language~: add marks from ~LANG~ to the character cycles in ~cyclekey-cycle~.
+- cyclekey-add-language :: Add marks from ~LANG~ to the character cycles in ~cyclekey-cycle~.
 
 The language string ~LANG~ is added to the list of languages in
 ~cyclekey-languages~. When called interactively, ~LANG~ is selected by the user
@@ -60,7 +60,7 @@ via ~completing-read~ from one of the languages defined in ~cyclekey-marks-alist
 By default, this change is saved for future sessions using
 ~customize-save-variable~.
 
-~cyclekey-remove-language~: remove marks from ~LANG~ from the character cycles in ~cyclekey-cycle~.
+- cyclekey-remove-language :: Remove marks from ~LANG~ from the character cycles in ~cyclekey-cycle~.
 
 The language string ~LANG~ is removed from the list of languages in
 ~cyclekey-languages~. When called interactively, ~LANG~ is selected by the user
@@ -68,9 +68,8 @@ via ~completing-read~ from one of the languages in ~cyclekey-languages~. By
 default, this change is saved for future sessions using
 ~customize-save-variable~.
 
-~cyclekey-help~: Show how ~cyclekey-cycle~~ cycles through marks for various characters
-
-~cyclekey-init~: Initialize the Cyclekey maps
+- cyclekey-help :: Show how ~cyclekey-cycle~~ cycles through marks for various characters.
+- cyclekey-init :: Initialize the Cyclekey maps.
 
 This function should be called whenever ~cyclekey-languages~ or
 ~cyclekey-marks-alist~ are modified non-interactively.
