@@ -68,7 +68,7 @@ via ~completing-read~ from one of the languages in ~cyclekey-languages~. By
 default, this change is saved for future sessions using
 ~customize-save-variable~.
 
-- cyclekey-help :: Show how ~cyclekey-cycle~~ cycles through marks for various characters.
+- cyclekey-help :: Show how ~cyclekey-cycle~ cycles through marks for various characters.
 - cyclekey-init :: Initialize the Cyclekey maps.
 
 This function should be called whenever ~cyclekey-languages~ or
