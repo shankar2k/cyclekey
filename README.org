@@ -112,8 +112,8 @@ The behavior of Cyclekey can be modified by customizing the following variables:
 
 Each keys is a string corresponding to a known language that uses a latin
 alphabet. Each value is a list of character cycles, where each character cycle
-is a string with the first character an English letter and all subsequent
-characters are variants marked with various diacritics.
+is a string with the first character an English letter or punctuation mark,
+and all subsequent characters are variants marked with various diacritics.
 
 - cyclekey-save-languages :: When true, save ~cyclekey-languages~ for future
   sessions whenever it is modified interactively. (default *true*)

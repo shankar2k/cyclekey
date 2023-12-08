@@ -112,7 +112,7 @@ a latin alphabet.
 
 Each value is a list of character cycles, where each character
 cycle is a string with the first character an English letter or
-punctuation make, and all subsequent characters are variants
+punctuation mark, and all subsequent characters are variants
 marked with various diacritics."
   :type '(alist :key-type string :value-type (repeat string)))
 
