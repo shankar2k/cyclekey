@@ -55,48 +55,49 @@
   (purecopy
    '(("Afrikaans" "aáä" "eéèêë" "iíîï" "oóôö" "uúûü" "yý" "AÁÄ" "EÉÈÊË"
       "IÍÎÏ" "OÓÔÖ" "UÚÛÜ" "YÝ")
-     ("Albanian" "cç" "eë" "CÇ" "EË")
-     ("Bosnian" "cčć" "dđ" "sš" "zž" "CČĆ" "DĐ" "SŠ" "ZŽ")
+     ("Albanian" "cç" "eë" "CÇ" "EË" "\"„“")
+     ("Bosnian" "cčć" "dđ" "sš" "zž" "CČĆ" "DĐ" "SŠ" "ZŽ" "\"„”")
      ("Catalan" "aà" "cç" "eéè" "iíï" "oóò" "uúü" "AÀ" "CÇ" "EÉÈ" "IÍÏ"
-      "OÓÒ" "UÚÜ")
-     ("Croatian" "cčć" "dđ" "sš" "zž" "CČĆ" "DĐ" "SŠ" "ZŽ")
+      "OÓÒ" "UÚÜ" "\"«»")
+     ("Croatian" "cčć" "dđ" "sš" "zž" "CČĆ" "DĐ" "SŠ" "ZŽ" "\"„“" "'‚‘")
      ("Czech" "aá" "cč" "dď" "eéĕ" "ií" "nň" "oó" "rř" "sš" "tť" "uúů" "yý"
       "zž" "AÁ" "CČ" "DĎ" "EÉĚ" "IÍ" "NŇ" "OÓ" "RŘ" "SŠ" "TŤ" "UÚŮ" "YÝ"
-      "ZŽ")
-     ("Danish" "aæå" "oø" "AÆÅ" "OØ")
+      "ZŽ" "\"„”" "'‚‘")
+     ("Danish" "aæå" "oø" "AÆÅ" "OØ" "\"»«" "'›‹")
      ("Dutch" "aáä" "eéë" "iíï" "oóö" "uúü" "AÁÄ" "EÉË" "IÍÏ" "OÓÖ" "UÚÜ")
-     ("Estonian" "aä" "oõö" "sš" "uü" "zž" "AÄ" "OÕÖ" "SŠ" "UÜ" "ZŽ")
+     ("Estonian" "aä" "oõö" "sš" "uü" "zž" "AÄ" "OÕÖ" "SŠ" "UÜ" "ZŽ" "\"„”")
      ("French" "aàáâæ" "cç" "eéèêë" "iîï" "oôœ" "uùûü" "yÿ" "AÀÁÆ" "CÇ"
-      "EÉÈÊË" "IÎÏ" "OÔŒ" "UÙÛÜ" "YŸ")
-     ("German" "aä" "oö" "sß" "uü" "AÄ" "OÖ" "Sß" "UÜ")
-     ("Hungarian" "aá" "eé" "ií" "oóöő" "uúüű" "AÁ" "EÉ" "IÍ" "OÓÖŐ" "UÚÜŰ")
+      "EÉÈÊË" "IÎÏ" "OÔŒ" "UÙÛÜ" "YŸ" "\"«»")
+     ("German" "aä" "oö" "sß" "uü" "AÄ" "OÖ" "Sß" "UÜ" "\"„“»«" "'›‹‚‘")
+     ("Hungarian" "aá" "eé" "ií" "oóöő" "uúüű" "AÁ" "EÉ" "IÍ" "OÓÖŐ" "UÚÜŰ"
+      "\"„»«")
      ("Icelandic" "aáæ" "dđ" "eé" "ií" "oóö" "uú" "tþ" "yý" "AÄ" "DÐ" "EÉ"
-      "IÍ" "OÓÖ" "UÚ" "TÞ" "YÝ")
-     ("Irish" "aá" "eé" "iıí" "oó" "uú" "AÁ" "EÉ" "IÍ" "OÓ" "UÚ")
-     ("Italian" "aà" "eéè" "iì" "oóò" "uù" "AÀ" "EÉÈ" "IÌ" "OÓÒ" "UÙ")
+      "IÍ" "OÓÖ" "UÚ" "TÞ" "YÝ" "\"„“«»" "'‚‘")
+     ("Irish" "aá" "eé" "iıí" "oó" "uú" "AÁ" "EÉ" "IÍ" "OÓ" "UÚ" "&⁊")
+     ("Italian" "aà" "eéè" "iì" "oóò" "uù" "AÀ" "EÉÈ" "IÌ" "OÓÒ" "UÙ" "\"«»")
      ("Hawaiian" "aā" "eē" "iī" "oō" "uū" "AĀ" "EĒ" "IĪ" "OŌ" "UŪ")
      ("Latvian" "aā" "cč" "eē" "gģ" "iī" "kķ" "lļ" "nņ" "sš" "uū" "zž" "AĀ"
-      "CČ" "EĒ" "GĢ" "IĪ" "KĶ" "LĻ" "NŅ" "SŠ" "UŪ" "ZŽ")
+      "CČ" "EĒ" "GĢ" "IĪ" "KĶ" "LĻ" "NŅ" "SŠ" "UŪ" "ZŽ" "\"„“")
      ("Lithuanian" "aą" "cč" "eęė" "iį" "sš" "uųū" "zž" "AĄ" "CČ" "EĘĖ" "IĮ"
-      "SŠ" "UŲŪ" "ZŽ")
-     ("Luxembourgish" "aä" "eëé" "AÄ" "EËÉ")
+      "SŠ" "UŲŪ" "ZŽ" "\"„”" "'‚‘")
+     ("Luxembourgish" "aä" "eëé" "AÄ" "EËÉ" "\"„“«»")
      ("Maltese" "cċ" "gġ" "hħ" "zż" "CĊ" "GĠ" "HĦ" "ZŻ")
      ("Montenegrin" "cčć" "dđ" "sšś" "zžź" "CČĆ" "DĐ" "SŠŚ" "ZŽŹ")
-     ("Norwegian" "aæå" "eéèê" "oóòôø" "uù" "AÆÅ" "EÉÈÊ" "OÓÒÔØ" "UÙ")
+     ("Norwegian" "aæå" "eéèê" "oóòôø" "uù" "AÆÅ" "EÉÈÊ" "OÓÒÔØ" "UÙ" "\"« »")
      ("Polish" "aą" "cć" "eę" "lł" "nń" "oó" "sś" "zźż" "AĄ" "CĆ" "EĘ" "LŁ"
-      "NŃ" "OÓ" "SŚ" "ZŹŻ")
+      "NŃ" "OÓ" "SŚ" "ZŹŻ" "\"„”«»" "'‚’")
      ("Portuguese" "aáâãà" "cç" "eéê" "ií" "oóôõ" "uú" "AÁÂÃÀ" "CÇ" "EÉÊ"
-      "IÍ" "OÓÔÕ" "UÚ")
-     ("Romanian" "aăâ" "iî" "sș" "tț" "AĂÂ" "IÎ" "SȘ" "TȚ")
+      "IÍ" "OÓÔÕ" "UÚ" "\"«»")
+     ("Romanian" "aăâ" "iî" "sș" "tț" "AĂÂ" "IÎ" "SȘ" "TȚ" "\"„”«»")
      ("Scottish" "aà" "eè" "iì" "oò" "uù" "AÀ" "EÈ" "IÌ" "OÒ" "UÙ")
-     ("Serbian" "cčć" "dđ" "sš" "zž" "CČĆ" "DĐ" "SŠ" "ZŽ")
+     ("Serbian" "cčć" "dđ" "sš" "zž" "CČĆ" "DĐ" "SŠ" "ZŽ" "\"„")
      ("Slovak" "aáä" "cč" "dď" "eé" "ií" "lĺľ" "nň" "oóô" "rŕ" "sš" "tť"
       "uú" "yý" "zž" "AÁÄ" "CČ" "DĎ" "EÉ" "IÍ" "LĹĽ" "NŇ" "OÓÔ" "RŔ" "SŠ"
-      "TŤ" "UÚ" "YÝ" "ZŽ")
-     ("Slovenian" "cč" "sš" "zž" "CČ" "SŠ" "ZŽ")
+      "TŤ" "UÚ" "YÝ" "ZŽ" "\"„”" "'‚‘")
+     ("Slovenian" "cč" "sš" "zž" "CČ" "SŠ" "ZŽ" "\"„”" "'‚‘")
      ("Spanish" "aá" "eé" "ií" "nñ" "oó" "uúü" "yý" "AÁ" "EÉ" "IÍ" "NÑ" "OÓ"
-      "UÚÜ" "YÝ")
-     ("Swedish" "aåä" "oö" "AÅÄ" "OÖ")
+      "UÚÜ" "YÝ" "?¿" "!¡" "\"«»")
+     ("Swedish" "aåä" "oö" "AÅÄ" "OÖ" "\"”")
      ("Turkish" "cç" "gğ" "iı" "oö" "sş" "uü" "CÇ" "GĢ" "Iİ" "OÖ" "SŞ" "UÜ")
      ("Turkmen" "aä" "cç" "nň" "oö" "sş" "uü" "yý" "zž" "AÄ" "CÇ" "NŇ" "OÖ"
       "SŞ" "UÜ" "YÝ" "ZŽ")
@@ -108,9 +109,9 @@ Each key is a string corresponding to a known language that uses
 a latin alphabet.
 
 Each value is a list of character cycles, where each character
-cycle is a string with the first character an English letter and
-all subsequent characters are variants marked with various
-diacritics."
+cycle is a string with the first character an English letter or
+punctuation make, and all subsequent characters are variants
+marked with various diacritics."
   :type '(alist :key-type string :value-type (repeat string)))
 
 (defcustom cyclekey-save-languages t
@@ -119,25 +120,12 @@ whenever it is modified by either ``cyclekey-add-language'' or
 ``cyclekey-remove-language''."
   :type 'boolean)
 
-;;;; Constants
-
-(defconst cyclekey-empty-map
-  (let ((map (make-hash-table)))
-    (cl-loop for ch from ?A to ?Z
-             for lower = (downcase ch)
-             do
-             (puthash ch ch map)
-             (puthash lower lower map))
-    map)
-  "Empty cyclekey hash table that maps each English character to itself.")
-
-
 ;;;; Variables
 
-(defvar cyclekey-forward-map (copy-hash-table cyclekey-empty-map)
+(defvar cyclekey-forward-map (make-hash-table)
   "Hash table mapping each character to the next diacritic in the cycle.")
 
-(defvar cyclekey-backward-map (copy-hash-table cyclekey-empty-map)
+(defvar cyclekey-backward-map (make-hash-table)
   "Hash table mapping each character to the previous diacritic in the cycle.")
 
 (defvar cyclekey-full-map (make-hash-table)
@@ -150,33 +138,37 @@ whenever it is modified by either ``cyclekey-add-language'' or
 
 This should be called whenever ``cyclekey-languages'' or
 ``cyclekey-marks-alist'' are modified."
-  (setq cyclekey-forward-map (copy-hash-table cyclekey-empty-map)
-        cyclekey-backward-map (copy-hash-table cyclekey-empty-map)
-        cyclekey-full-map (make-hash-table))
+  (clrhash cyclekey-forward-map)
+  (clrhash cyclekey-backward-map)
+  (clrhash cyclekey-full-map)
   (dolist (lang cyclekey-languages)
     (dolist (cycle (alist-get lang cyclekey-marks-alist nil nil #'equal))
       (cl-loop for next across (substring cycle 1)
                with first = (aref cycle 0)
                unless (gethash next cyclekey-forward-map) do
-               (let ((last (gethash first cyclekey-backward-map)))
+               (let ((last (gethash first cyclekey-backward-map first)))
                  (puthash next first cyclekey-forward-map)
                  (puthash last next cyclekey-forward-map)
                  (puthash next last cyclekey-backward-map)
                  (puthash first next cyclekey-backward-map)))))
-  (cl-loop for ch from ?A to ?Z
-           for lower = (downcase ch)
-           do
-           (puthash ch (cyclekey--get-cycle ch) cyclekey-full-map)
-           (puthash lower (cyclekey--get-cycle lower) cyclekey-full-map)))
+  (maphash #'cyclekey--make-full-cycle cyclekey-forward-map))
 
-(defun cyclekey--get-cycle (ch)
-  "Return the cycle of marks for CH."
-  (let ((next (gethash ch cyclekey-forward-map))
+(defun cyclekey--make-full-cycle (key val)
+  "Add cycle of marks for KEY to ``cyclekey-full-map''.
+
+VAL, the character KEY maps forward to, is included to enable use
+with ``maphash''."
+  (let ((next val)
         (cycle nil))
-    (while (/= next ch)
+    (while (/= next key)
       (setq cycle (concat cycle (list next))
             next (gethash next cyclekey-forward-map)))
-    cycle))
+    (puthash key cycle cyclekey-full-map)))
+
+(defun cyclekey--is-alphabet (ch)
+  "Return t if CH is an alphabet character."
+  (memq (get-char-code-property ch 'general-category)
+        '(Ll Lu Lo Lt Lm Mn Mc Me Nl)))
 
 
 ;;;; Commands
@@ -201,16 +193,21 @@ Cyclekey map."
 (defun cyclekey-help ()
   "Show how ``cyclekey-cycle'' cycles through marks for various characters."
   (interactive)
-  (with-output-to-temp-buffer "*Cyclekey Help*"
+  (with-output-to-temp-buffer "*Cyclekey Help*"    
     (princ "Cyclekey Help\n=============\n\n")
     (princ "Cyclekey Languages\n------------------\n")
     (princ (string-join cyclekey-languages ", "))
     (princ "\n\nCyclekey cycling\n----------------\n")
-    (cl-loop for ch from ?a to ?z with cycle
-             when (setq cycle (gethash ch cyclekey-full-map))
+    (cl-loop for ch being hash-keys of cyclekey-full-map with cycle
+             ;; (cl-loop for ch from ?a to ?z with cycle
+             ;; when (setq cycle (gethash ch cyclekey-full-map))
+             when (and (setq cycle (gethash ch cyclekey-full-map))
+                       (or (<= ?a ch ?z)
+                           (and (not (cyclekey--is-alphabet ch))
+                                (<= ?! ch ?~))))
              do (princ
                  (format "    %c ---> %-19s%s\n" ch cycle
-                         (if-let* ((upch (upcase ch))
+                         (if-let* ((upch (and (<= ?a ch ?z) (upcase ch)))
                                    (upcyc (gethash upch cyclekey-full-map)))
                              (format "%c --> %s" upch upcyc)
                            "")))))
