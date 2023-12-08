@@ -4,8 +4,8 @@
 
 ;; Author: Shankar Rao <shankar.rao@gmail.com>
 ;; URL: https://github.com/shankar2k/cyclekey
-;; Version: 0.1
-;; Package-Requires: ((emacs "25.1"))
+;; Version: 0.2
+;; Package-Requires: ((emacs "26.1"))
 ;; Keywords: convenience, wp, i18n, diacritic, accent
 
 ;; This file is not part of GNU Emacs.
@@ -34,6 +34,10 @@
 
 ;;; History:
 
+;; Version 0.2 (2023-12-08):
+
+;; - Added punctuation support
+
 ;; Version 0.1 (2023-12-02):
 
 ;; - Initial version
@@ -41,8 +45,6 @@
 ;;; Code:
 
 ;;;; Requirements
-
-(require 'cl-lib)
 
 ;;;; Customization
 
@@ -143,14 +145,14 @@ This should be called whenever ``cyclekey-languages'' or
   (clrhash cyclekey-full-map)
   (dolist (lang cyclekey-languages)
     (dolist (cycle (alist-get lang cyclekey-marks-alist nil nil #'equal))
-      (cl-loop for next across (substring cycle 1)
-               with first = (aref cycle 0)
-               unless (gethash next cyclekey-forward-map) do
-               (let ((last (gethash first cyclekey-backward-map first)))
-                 (puthash next first cyclekey-forward-map)
-                 (puthash last next cyclekey-forward-map)
-                 (puthash next last cyclekey-backward-map)
-                 (puthash first next cyclekey-backward-map)))))
+      (let ((first (aref cycle 0)))
+        (seq-doseq (next (substring cycle 1))
+          (unless (gethash next cyclekey-forward-map)
+            (let ((last (gethash first cyclekey-backward-map first)))
+              (puthash next first cyclekey-forward-map)
+              (puthash last next cyclekey-forward-map)
+              (puthash next last cyclekey-backward-map)
+              (puthash first next cyclekey-backward-map)))))))
   (maphash #'cyclekey--make-full-cycle cyclekey-forward-map))
 
 (defun cyclekey--make-full-cycle (key val)
@@ -165,11 +167,12 @@ with ``maphash''."
             next (gethash next cyclekey-forward-map)))
     (puthash key cycle cyclekey-full-map)))
 
-(defun cyclekey--is-alphabet (ch)
-  "Return t if CH is an alphabet character."
-  (memq (get-char-code-property ch 'general-category)
-        '(Ll Lu Lo Lt Lm Mn Mc Me Nl)))
-
+(defun cyclekey--is-english-punctuation (ch)
+  "Return t if CH is an English punctuation character."
+  (and (<= ?! ch ?~)         ; is printable ASCII <= 127
+       (not (<= ?0 ch ?9))   ; is not digit
+       (not (<= ?A ch ?Z))   ; is not capital letter
+       (not (<= ?a ch ?z)))) ; is not lowercase letter
 
 ;;;; Commands
 
@@ -198,19 +201,16 @@ Cyclekey map."
     (princ "Cyclekey Languages\n------------------\n")
     (princ (string-join cyclekey-languages ", "))
     (princ "\n\nCyclekey cycling\n----------------\n")
-    (cl-loop for ch being hash-keys of cyclekey-full-map with cycle
-             ;; (cl-loop for ch from ?a to ?z with cycle
-             ;; when (setq cycle (gethash ch cyclekey-full-map))
-             when (and (setq cycle (gethash ch cyclekey-full-map))
-                       (or (<= ?a ch ?z)
-                           (and (not (cyclekey--is-alphabet ch))
-                                (<= ?! ch ?~))))
-             do (princ
-                 (format "    %c ---> %-19s%s\n" ch cycle
-                         (if-let* ((upch (and (<= ?a ch ?z) (upcase ch)))
-                                   (upcyc (gethash upch cyclekey-full-map)))
-                             (format "%c --> %s" upch upcyc)
-                           "")))))
+    (maphash (lambda (ch cycle)
+               (when (and cycle (or (<= ?a ch ?z)
+                                    (cyclekey--is-english-punctuation ch)))
+                 (princ
+                  (format "    %c ---> %-19s%s\n" ch cycle
+                          (if-let* ((upch (and (<= ?a ch ?z) (upcase ch)))
+                                    (upcyc (gethash upch cyclekey-full-map)))
+                              (format "%c --> %s" upch upcyc)
+                            "")))))
+             cyclekey-full-map))
   (with-current-buffer "*Cyclekey Help*"
     (setq truncate-lines t)))
 
